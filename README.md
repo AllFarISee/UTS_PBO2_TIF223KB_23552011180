@@ -166,5 +166,5 @@ User tidak perlu tahu detail cara menghitung total atau proses verifikasi, cukup
 ## Demo Proyek
 <ul>
   <li>Github: <a href="">https://github.com/AllFarISee</a></li>
-  <li>Youtube: <a href="">Youtube</a></li>
+  <li>Video: <a href="">https://drive.google.com/drive/folders/1cG2ttRwU_KYT8Db6q6-LS-xP58MzE3k3?usp=sharing</a></li>
 </ul>
