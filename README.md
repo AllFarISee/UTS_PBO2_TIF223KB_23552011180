@@ -12,10 +12,11 @@
 </ul>
 
 ## Judul Studi Kasus
-<p>Aplikasi Pegelola Kasir Apotek Permata</p>
+<p>Aplikasi Pegelola Kasir Apotek</p>
 
 ## Penjelasan Studi Kasus
 <p>1. Latar Belakang
+  
 Apotek merupakan fasilitas pelayanan kesehatan yang menyediakan obat-obatan kepada pasien, baik dengan resep dari dokter maupun pembelian langsung. Dalam operasional sehari-hari, dibutuhkan sistem yang dapat:
 
 Mengelola data pasien dan tenaga medis
@@ -29,6 +30,7 @@ Mencatat transaksi secara otomatis
 Untuk itu, dibuatlah aplikasi Kasir Apotek berbasis Java dengan paradigma OOP (Object-Oriented Programming) dan koneksi ke database MySQL.
 
 2. Tujuan
+   
 Membangun aplikasi kasir apotek yang:
 
 Menerapkan prinsip OOP (encapsulation, inheritance, polymorphism, abstract class)
@@ -165,6 +167,6 @@ User tidak perlu tahu detail cara menghitung total atau proses verifikasi, cukup
 
 ## Demo Proyek
 <ul>
-  <li>Github: <a href="">https://github.com/AllFarISee</a></li>
+  <li>Github: <a href="">https://github.com/AllFarISee/UTS_PBO2_TIF223KB_23552011180)</a></li>
   <li>Video: <a href="">https://drive.google.com/drive/folders/1cG2ttRwU_KYT8Db6q6-LS-xP58MzE3k3?usp=sharing</a></li>
 </ul>
