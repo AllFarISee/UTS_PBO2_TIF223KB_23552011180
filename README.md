@@ -19,13 +19,13 @@
   
 Apotek merupakan fasilitas pelayanan kesehatan yang menyediakan obat-obatan kepada pasien, baik dengan resep dari dokter maupun pembelian langsung. Dalam operasional sehari-hari, dibutuhkan sistem yang dapat:
 
-Mengelola data pasien dan tenaga medis
-
-Mengelola data obat dan stok
-
-Memproses pembelian obat berdasarkan resep atau langsung
-
-Mencatat transaksi secara otomatis
+    - Mengelola data pasien dan tenaga medis
+    
+    - Mengelola data obat dan stok
+    
+    - Memproses pembelian obat berdasarkan resep atau langsung
+    
+    - Mencatat transaksi secara otomatis
 
 Untuk itu, dibuatlah aplikasi Kasir Apotek berbasis Java dengan paradigma OOP (Object-Oriented Programming) dan koneksi ke database MySQL.
 
