@@ -33,80 +33,82 @@ Untuk itu, dibuatlah aplikasi Kasir Apotek berbasis Java dengan paradigma OOP (O
    
 Membangun aplikasi kasir apotek yang:
 
-Menerapkan prinsip OOP (encapsulation, inheritance, polymorphism, abstract class)
-
-Mempermudah proses transaksi dan pencatatan
-
-Menjamin integritas data melalui relasi tabel di database
-
-Memberikan kemudahan verifikasi resep dan stok obat
+    - Menerapkan prinsip OOP (encapsulation, inheritance, polymorphism, abstract class)
+    
+    - Mempermudah proses transaksi dan pencatatan
+    
+    - Menjamin integritas data melalui relasi tabel di database
+    
+    - Memberikan kemudahan verifikasi resep dan stok obat
 
 3. Fitur Aplikasi
 Fitur utama aplikasi:
 
-Menampilkan daftar pasien dan obat
+        - Menampilkan daftar pasien dan obat
+    
+        - Menambah, mengedit, dan menghapus data pasien atau obat (melalui DAO)
 
-Menambah, mengedit, dan menghapus data pasien atau obat (melalui DAO)
+        - Proses transaksi pembelian obat:
 
-Proses transaksi pembelian obat:
+          Dengan resep dokter: Verifikasi resep → Hitung total → Catat transaksi
+          
+          Pembelian langsung: Pilih obat dan jumlah → Hitung total → Catat transaksi
 
-Dengan resep dokter: Verifikasi resep → Hitung total → Catat transaksi
-
-Pembelian langsung: Pilih obat dan jumlah → Hitung total → Catat transaksi
-
-Penyimpanan semua data ke dalam MySQL Database
+        - Penyimpanan semua data ke dalam MySQL Database
 
 4. Struktur OOP
 Aplikasi ini menggunakan konsep OOP sebagai berikut:
 
-Encapsulation: Setiap class (Pasien, Obat, Resep, dll.) memiliki atribut private dan getter/setter.
-
-Inheritance: TenagaMedis sebagai superclass, diwarisi oleh Dokter dan Apoteker.
-
-Polymorphism: Interface MetodeResep diimplementasikan oleh class ResepDenganDokter untuk proses resep.
-
-Abstract Class (opsional): Bisa digunakan bila ingin membuat dasar umum untuk entitas medis.
+        - Encapsulation: Setiap class (Pasien, Obat, Resep, dll.) memiliki atribut private dan getter/setter.
+        
+        - Inheritance: TenagaMedis sebagai superclass, diwarisi oleh Dokter dan Apoteker.
+        
+        - Polymorphism: Interface MetodeResep diimplementasikan oleh class ResepDenganDokter untuk proses resep.
+        
+        - Abstract Class (opsional): Bisa digunakan bila ingin membuat dasar umum untuk entitas medis.
 
 5. Struktur Database
-pasien: Menyimpan data pasien
+   
+        - pasien: Menyimpan data pasien
+        
+        - tenaga_medis: Data dokter dan apoteker
+        
+        - obat: Data obat dan stok
+        
+        - resep & detail_resep: Resep pasien dan detail obat yang diresepkan
+        
+        - transaksi: Catatan pembelian pasien
+        
+        - Relasi menggunakan foreign key untuk menjaga integritas data, contohnya:
 
-tenaga_medis: Data dokter dan apoteker
-
-obat: Data obat dan stok
-
-resep & detail_resep: Resep pasien dan detail obat yang diresepkan
-
-transaksi: Catatan pembelian pasien
-
-Relasi menggunakan foreign key untuk menjaga integritas data, contohnya:
-
-resep.dokter_id → tenaga_medis.id
-
-detail_resep.obat_id → obat.id
+          resep.dokter_id → tenaga_medis.id
+          
+          detail_resep.obat_id → obat.id
 
 6. Proses Bisnis
 Petugas memilih transaksi dengan resep atau langsung
 
 Jika dengan resep:
 
-Masukkan ID pasien → tampilkan resep → hitung harga berdasarkan isi resep
-
-Simpan data transaksi
+    Masukkan ID pasien → tampilkan resep → hitung harga berdasarkan isi resep
+    
+    Simpan data transaksi
 
 Jika langsung:
 
-Pilih obat dan jumlah → hitung total → simpan transaksi
-
+    Pilih obat dan jumlah → hitung total → simpan transaksi
+    
 Semua data otomatis tersimpan di database
 
 7. Manfaat Sistem
-Mengurangi kesalahan pencatatan manual
-
-Mempercepat proses transaksi apotek
-
-Memudahkan pemantauan data pasien, obat, dan transaksi
-
-Fleksibel untuk pengembangan lebih lanjut (seperti cetak struk, login, laporan)</p>
+   
+        - Mengurangi kesalahan pencatatan manual
+        
+        - Mempercepat proses transaksi apotek
+        
+        - Memudahkan pemantauan data pasien, obat, dan transaksi
+        
+        - Fleksibel untuk pengembangan lebih lanjut (seperti cetak struk, login, laporan)
 
 ## Penjelasan 4 Pilar OOP dalam Studi Kasus
 
