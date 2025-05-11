@@ -42,6 +42,7 @@ Membangun aplikasi kasir apotek yang:
     - Memberikan kemudahan verifikasi resep dan stok obat
 
 3. Fitur Aplikasi
+
 Fitur utama aplikasi:
 
         - Menampilkan daftar pasien dan obat
@@ -56,7 +57,8 @@ Fitur utama aplikasi:
 
         - Penyimpanan semua data ke dalam MySQL Database
 
-4. Struktur OOP
+5. Struktur OOP
+
 Aplikasi ini menggunakan konsep OOP sebagai berikut:
 
         - Encapsulation: Setiap class (Pasien, Obat, Resep, dll.) memiliki atribut private dan getter/setter.
@@ -67,7 +69,7 @@ Aplikasi ini menggunakan konsep OOP sebagai berikut:
         
         - Abstract Class (opsional): Bisa digunakan bila ingin membuat dasar umum untuk entitas medis.
 
-5. Struktur Database
+7. Struktur Database
    
         - pasien: Menyimpan data pasien
         
@@ -85,7 +87,8 @@ Aplikasi ini menggunakan konsep OOP sebagai berikut:
           
           detail_resep.obat_id → obat.id
 
-6. Proses Bisnis
+8. Proses Bisnis
+
 Petugas memilih transaksi dengan resep atau langsung
 
 Jika dengan resep:
@@ -113,59 +116,63 @@ Semua data otomatis tersimpan di database
 ## Penjelasan 4 Pilar OOP dalam Studi Kasus
 
 ### 1. Inheritance
-<p>Penjelasan:
-Inheritance memungkinkan kita membuat class baru (child) yang mewarisi properti dan method dari class yang sudah ada (parent).
+
+Penjelasan:
+  Inheritance memungkinkan kita membuat class baru (child) yang mewarisi properti dan method dari class yang sudah ada (parent).
 
 Cara Kerja di Aplikasi:
-Class Dokter dan Apoteker mewarisi dari class TenagaMedis:
+  Class Dokter dan Apoteker mewarisi dari class TenagaMedis:
 
-public class Dokter extends TenagaMedis { ... }
-public class Apoteker extends TenagaMedis { ... }
+    public class Dokter extends TenagaMedis { ... }
+    public class Apoteker extends TenagaMedis { ... }
 
-Dengan ini, Dokter dan Apoteker otomatis memiliki atribut seperti id, nama, dan jabatan, serta bisa memiliki method tambahan sesuai kebutuhan masing-masing.</p>
+Dengan ini, Dokter dan Apoteker otomatis memiliki atribut seperti id, nama, dan jabatan, serta bisa memiliki method tambahan sesuai kebutuhan masing-masing.
 
 ### 2. Encapsulation
-<p>Penjelasan:
-Encapsulation adalah proses menyembunyikan data (atribut) suatu objek agar tidak bisa diakses langsung dari luar class, kecuali melalui method khusus seperti getter dan setter.
+
+Penjelasan:
+  Encapsulation adalah proses menyembunyikan data (atribut) suatu objek agar tidak bisa diakses langsung dari luar class, kecuali melalui method khusus seperti getter dan     setter.
 
 Cara Kerja di Aplikasi:
-Class seperti Pasien, Obat, dan TenagaMedis memiliki atribut private, contoh:
+  Class seperti Pasien, Obat, dan TenagaMedis memiliki atribut private, contoh:
 
 private String nama;
-Untuk mengakses atau mengubah nilai nama, digunakan method:
+  Untuk mengakses atau mengubah nilai nama, digunakan method:
 
-public String getNama() { return nama; }
-public void setNama(String nama) { this.nama = nama; }
+    public String getNama() { return nama; }
+    public void setNama(String nama) { this.nama = nama; }
 
-Tujuannya untuk menjaga agar data tidak diubah sembarangan, dan bisa divalidasi terlebih dahulu di dalam setter jika dibutuhkan.</p>
+Tujuannya untuk menjaga agar data tidak diubah sembarangan, dan bisa divalidasi terlebih dahulu di dalam setter jika dibutuhkan.
 
 ### 3. Polymorphism
-<p>Penjelasan:
-Polymorphism memungkinkan sistem untuk menggunakan satu interface atau superclass untuk berbagai implementasi berbeda.
+
+Penjelasan:
+  Polymorphism memungkinkan sistem untuk menggunakan satu interface atau superclass untuk berbagai implementasi berbeda.
 
 Cara Kerja di Aplikasi:
-Interface MetodeResep memiliki beberapa implementasi, misalnya ResepDenganDokter.
+  Interface MetodeResep memiliki beberapa implementasi, misalnya ResepDenganDokter.
 
 Saat dijalankan:
 
-MetodeResep metode = new ResepDenganDokter(pasienId, resepId);
-metode.verifikasi(connection);
-metode.hitungTotal(connection);
+    MetodeResep metode = new ResepDenganDokter(pasienId, resepId);
+    metode.verifikasi(connection);
+    metode.hitungTotal(connection);
 
-Dengan cara ini jenis resep lain bisa ditambahkan tanpa mengubah kode utama. Ini membuat aplikasi fleksibel terhadap perubahan atau penambahan fitur baru.</p>
+Dengan cara ini jenis resep lain bisa ditambahkan tanpa mengubah kode utama. Ini membuat aplikasi fleksibel terhadap perubahan atau penambahan fitur baru.
 
 ### 4. Abstract
-<p>Penjelasan:
-Abstraction menyembunyikan detail kompleks dari pengguna dan hanya menunjukkan bagian penting dari suatu objek.
+
+Penjelasan:
+  Abstraction menyembunyikan detail kompleks dari pengguna dan hanya menunjukkan bagian penting dari suatu objek.
 
 Cara Kerja di Aplikasi:
-Interface MetodeResep adalah abstraksi dari cara memproses resep:
+  Interface MetodeResep adalah abstraksi dari cara memproses resep:
 
-public interface MetodeResep {
-    boolean verifikasi(Connection connection);
-    double hitungTotal(Connection connection);
-}
-User tidak perlu tahu detail cara menghitung total atau proses verifikasi, cukup memanggil method-nya.</p>
+    public interface MetodeResep {
+        boolean verifikasi(Connection connection);
+        double hitungTotal(Connection connection);
+    }
+User tidak perlu tahu detail cara menghitung total atau proses verifikasi, cukup memanggil method-nya.
 
 ## Demo Proyek
 <ul>
